@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooth_count</title>
+    <link rel="stylesheet" href="doc.css">
+</head>
+<body>
+
+<section>
+    <div class="head">
+        <div class="logo"><a href="#"><img src="https://picsum.photos/180/80?random=1">醫師專區</a></div>
+        <div class="log_name">
+            <div class="user_name">江明彥</div>醫師，您好<a href="#" class="log_out">登出</a>
+        </div>
+    </div>
+    <div class="menu_wrap">
+        <div class="menu">
+            <div class="menu_list"><a href="#">基本資料</a></div>
+            <div class="menu_list"><a href="#">密碼修改</a></div>
+            <div class="menu_list"><a href="#">預約查詢</a></div>
+            <div class="menu_list"><a href="#" id="active">矯正牙齒計算機</a></div>
+            <div class="menu_list"><a href="#">擴弓計算</a></div>
+            <div class="menu_list"><a href="#">子帳號管理</a></div>
+            <div class="menu_list"><a href="#">訂單管理(連結)</a></div>
+        </div>
+        <div class="header_menu_rwd">
+            <label for="menu_control" class="menu_btn_rwd">
+                <span></span>             
+            </label>
+            <nav>
+            <a href="#">基本資料</a>
+            <a href="#">密碼修改</a>
+            <a href="#">預約查詢</a>
+            <a href="#" id="active_rwd">矯正牙齒計算機</a>
+            <a href="#">擴弓計算</a>
+            <a href="#">子帳號管理</a>
+            <a href="#">訂單管理(連結)</a>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="tooth_count_content_wrap">
+        <h2>隱形矯正回診計算機，無論你是正在牙齒矯正的夥伴，牙醫師或牙醫助理都能快速計算回診時間</h2>
+        <div class="tooth_count_content">
+            <p>今天是 <input type="text" class="big_text" id="bt" style="width: 20vw; text-align: center;"></p>
+            <p>牙套副數(階段)
+                
+                <select name="" id="stage" class="big_text" style="width: 17vw;">
+                    <option value="6">6</option>
+                    <option value="12">12</option>
+                    <option value="18">18</option>
+                </select>
+            </p>
+            <p>目前副數<input type="text" class="big_text" id="wearing" value="1"></p>
+            <p>每副戴<input type="text" class="small_text" value="14" id="change">天</p>
+            <button class="tooth_count_submit_btn">計算更換日期</button>
+            <p>根據您的設定，以下為每副更換的日期</p>
+            <div class="tooth_count_list_wrap">
+                <div class="tooth_count_list">
+                    <p class="box">階段數</p>
+                    <p class="box">預定配戴日期</p>
+                </div>
+                <div id="tooth_count_list_wrap">
+                        <div class="tooth_count_list">
+                            <p class="box" id="num1">第1回</p>
+                            <div class="date_box"><p class="day1">天數1</p>-<p class="day2">天數2</p></div>
+                        </div>
+                        <div class="tooth_count_list">
+                            <p class="box" id="num2">第2回</p>
+                            <div class="date_box"><p class="day2">天數2</p>-<p class="day3">天數3</p></div>
+                        </div>
+                        <div class="tooth_count_list">
+                            <p class="box" id="num3">第3回</p>
+                            <div class="date_box"><p class="day3">天數3</p>-<p class="day4">天數4</p></div>
+                        </div>
+                        <div class="tooth_count_list">
+                            <p class="box" id="num4">第4回</p>
+                            <div class="date_box"><p class="day4">天數4</p>-<p class="day5">天數5</p></div>
+                        </div>
+                        <div class="tooth_count_list">
+                            <p class="box" id="num5">第5回</p>
+                            <div class="date_box"><p class="day5">天數5</p>-<p class="day6">天數6</p></div>
+                        </div>
+                        <div class="tooth_count_list">
+                            <p class="box" id="num6">第6回</p>
+                            <div class="date_box"><p class="day6">天數6</p>-<p class="day7">天數7</p></div>
+                        </div>
+                        <!-- <div class="tooth_count_list">
+                            <p class="box" id="num7">第7回</p>
+                            <div class="date_box"><p class="day7">天數1</p>-<p class="day8">天數2</p></div>
+                        </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="foot">
+            <div class="foot_left">
+                <a href="#">日本小明股份有限公司</a>
+                <p>台北市信義區信義路五段7號57F</p>
+                <p>電話:02-12345678</p>
+            </div>
+            <div class="copyright">日本小明股份有限公司,All rights reserved.</div>
+        </div>
+        <div class="to_top">TOP</div>
+    </section>
+
+<script src="jquery-1.12.js"></script>
+<script>
+    $(document).ready(function(){
+       
+        $(".menu_btn_rwd").click(function(){
+                $(".header_menu_rwd nav").slideToggle("quick")
+            });
+        $(".to_top").click(function(){
+                $("html,body").animate({scrollTop: 0}, 200);
+            });
+
+    var format = function(stage){
+        
+        var day = stage.getDate();
+
+        if(stage.getMonth()<10){
+        var month = "0"+(stage.getMonth()+1);
+        }
+
+        if(stage.getDate()<10){
+        day = "0"+stage.getDate();
+        }
+
+        var datew = stage.getFullYear()+"/"+ month +"/"+ day ;
+        var datew = datew.toString();
+    
+        return datew;
+    }
+
+    var today = new Date();
+    console.log(today);
+    console.log(today.toLocaleDateString());
+    today = format(today);
+    
+    $("#bt").val(today);
+    
+    console.log(new Date($("#bt").val()));
+    
+        //date預設結束
+
+        $(".tooth_count_submit_btn").click(function(){
+            
+            
+            var change = $("#change").val();
+            // var day2c = new Date();
+            // var day2 = day2c.setTime(day2c.getTime() + change * 1000 * 60 * 60 * 24);
+            // day2c = format(day2c);
+
+            // $("#day1").text(today);
+
+            var i ;
+            var enter = $("#wearing").val();
+            var n = 7 - enter;
+            var n2 = 13 - enter;
+            var n3 = 19 - enter;
+
+            var now = new Date($("#bt").val()).getDate();
+
+            var content = '';
+        if ($("#stage").val() == 6){
+
+            switch ($("#wearing").val()){
+                    case '1':
+                        break;
+                    case '2':
+                        break;
+                    case '3':
+                        break;
+                    case '4':
+                        break;
+                    case '5':
+                        break;
+                    case '6':
+                        break;
+                    default:
+                        alert("請輸入1~6之間的數字");
+            };
+            for (i=0  ; i < n ; i++) {
+                var day_start = new Date($("#bt").val()).setDate(now + change * i);
+                var day_end = new Date($("#bt").val()).setDate(now + change * (i+1));
+                day_start = format(new Date(day_start));
+                day_end = format(new Date(day_end));
+                console.log(day_start);
+                console.log(day_end);
+
+                content += '<div class="tooth_count_list">';
+                content += '<p class="box" id="num1">第'+(enter++)+'回</p>';
+                content += '<div class="date_box"><p class="day1">'+day_start+'</p>-<p class="day2">'+day_end+'</p></div>';
+                content += '</div>';
+            };
+        };
+        if ($("#stage").val() == 12){
+
+            switch ($("#wearing").val()){
+                    case '7':
+                        break;
+                    case '8':
+                        break;
+                    case '9':
+                        break;
+                    case '10':
+                        break;
+                    case '11':
+                        break;
+                    case '12':
+                        break;
+                    default:
+                        alert("請輸入7~12之間的數字");
+            };
+
+            for (i=0;  i < n2 ; i++) {
+                var day_start = new Date($("#bt").val()).setDate(now + change * i);
+                var day_end = new Date($("#bt").val()).setDate(now + change * (i+1));
+                day_start = format(new Date(day_start));
+                day_end = format(new Date(day_end));
+
+                content += '<div class="tooth_count_list">';
+                content += '<p class="box" id="num1">第'+(enter++)+'回</p>';
+                content += '<div class="date_box"><p class="day1">'+day_start+'</p>-<p class="day2">'+day_end+'</p></div>';
+                content += '</div>';
+            };
+        };    
+
+        if ($("#stage").val() == 18){
+
+            switch ($("#wearing").val()){
+                    case '13':
+                        break;
+                    case '14':
+                        break;
+                    case '15':
+                        break;
+                    case '16':
+                        break;
+                    case '17':
+                        break;
+                    case '18':
+                        break;
+                    default:
+                        alert("請輸入13~18之間的數字");
+            };
+            for (i=0;  i < n3 ; i++) {
+                var day_start = new Date($("#bt").val()).setDate(now + change * i);
+                var day_end = new Date($("#bt").val()).setDate(now + change * (i+1));
+                day_start = format(new Date(day_start));
+                day_end = format(new Date(day_end));
+
+                content += '<div class="tooth_count_list">';
+                content += '<p class="box" id="num1">第'+(enter++)+'回</p>';
+                content += '<div class="date_box"><p class="day1">'+day_start+'</p>-<p class="day2">'+day_end+'</p></div>';
+                content += '</div>';
+
+            }; 
+        };
+        $("#tooth_count_list_wrap").html(content);
+
+        // if ($("#stage").val() == 18){
+        //     for (i=0;  i < n3 ; i++) {
+        //         var day_start = now.setTime(now.getTime() + change * 1000 * 60 * 60 * 24 * i);
+        //         var day_end = after.setTime(now.getTime() + change * 1000 * 60 * 60 * 24 * (i+1));
+        //         day_start = format(now);
+        //         day_end = format(after);
+        //     };
+        // };
+
+        })
+    })
+</script>
+</body>
+</html>

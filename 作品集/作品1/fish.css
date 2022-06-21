@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+.head {
+    justify-content: space-between;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    position: relative;
+}
+.logo {
+    margin-left: 20px;
+}
+.menu_wrap {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.menu_wrap img {
+    width: 20px;
+    height: 20px;
+}
+.menu_wrap a {
+    color: white;
+}
+.menu_wrap a:hover {
+    color: yellow;
+}
+.menu {
+    margin: 0 10px;
+}
+.top_img_wrap {
+    padding: 0 20px;
+    background-color: black;
+}
+.top_img {
+    background-image: url(https://picsum.photos/1860/400/?random=1);
+    min-height: 20vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.img_word {
+    background-color: black;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+.content_wrap {
+    width: 70%;
+    margin: 0 auto;
+}
+.top_option {
+    justify-content: flex-end;
+    display: flex;
+    margin: 20px 0;
+}
+.top_option label {
+    margin: 0 10px;
+}
+.btn {
+    padding: 20px 50px;
+    color: white;
+    border-radius: 20px;
+    margin:10px;
+    cursor: pointer;
+}
+.top_btn {
+    display: flex;
+}
+.content {
+    display: grid;
+    gap: 26px;
+    grid-template-columns: repeat(auto-fit,minmax(420px, 1fr));
+}
+.item img {
+    width: 100%;
+}
+.item_name {
+    margin: 5px 0;
+}
+.item_cost_wrap {
+    display: flex;
+    border: 1px solid blue;
+    border-radius: 10px;
+    justify-content: space-around;
+    font-size: 20px;
+}
+.item_cost_wrap img {
+    width: 15px;
+    height: 15px;
+}
+.item_cost {
+    border-left: 1px solid blue;
+    border-right: 1px solid blue;
+    width: 33%;
+    padding: 5px;
+    text-align: right;
+}
+.item_time {
+    width: 33%;
+    padding: 5px;
+    text-align: right;
+}
+.item_bidder {
+    width: 33%;
+    padding: 5px;
+    text-align: right;
+}
+.foot {
+    justify-content: center;
+    padding: 5vw 10vw;
+    background-color: gray;
+    display: flex;
+    font-size: 15px;
+    color: white;
+    margin-top: 5vw;
+}
+.foot_logo {
+    width: 300px;
+    height: 150px;
+    margin-right: 5vw;
+}
+.foot_logo img {
+    width: 100%;
+    height: 100%;
+}
+.foot_link_wrap {
+    display: flex;
+}
+.foot_link_wrap a {
+    color: white;
+}
+.foot_link {
+    margin-right: 10px;
+    border-right: 1px solid white;
+    padding-right: 5px;
+}
+.end {
+    border-right: none;
+}
+.foot_item {
+    margin: 20px 0;
+}
+.page_wrap {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 5vw;
+}
+.page {
+    margin: 0 5px;
+    border: 1px solid blue;
+    color: blue;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.page:hover {
+    background-color: red;
+    color: white;
+    transition: ease-in-out .4s;
+}
+.bid_btn {
+    border: 1px solid red;
+    border-radius: 30px;
+    padding: 10px 30px;
+    color: red;
+    display: flex;
+    align-items: center;
+    width: 5em;
+    margin-top: 5px;
+    float: right;
+    text-align: center;
+    justify-content: center;
+}
+.bid_btn img {
+    width: 15px;
+    height: 15px;
+}
+.bid_btn a {
+    color: red;
+}
+.bid_btn:hover {
+    background-color: black;
+    color: white;
+    transition: ease-in-out .4s;
+    border: none;
+}
+
+/*---------------手機選單開始*/
+
+.header_menu_rwd {
+    display: none;
+}
+.menu_btn_rwd{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    display: block;
+    position: absolute;
+    top: 7px;
+    right: 30px;
+    border-radius: 5px;
+}
+
+.menu_btn_rwd::before{
+    content: '';
+    position: absolute;
+    height: 6px;
+    width: 40px;
+    right: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0px 15px 0px white,
+                0px -15px 0px white;
+}
+.header_menu_rwd nav {
+    width: 100%;
+    /* height: 50vh; */
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    z-index: 99;
+    display: none;
+    text-align: center;
+}
+.header_menu_rwd nav a {
+    text-decoration: none;
+    color: white;
+    /* padding: 10px 20px; */
+    border-bottom: 2px solid gray;
+    display: block;
+    margin: 20px;
+    line-height: 40px;
+}
+.to_top {
+    position: fixed;
+    bottom: 70px;
+    right: 70px;
+    width:70px;
+    height: 70px;
+    border-radius: 50px;
+    background-color: rgb(196, 165, 118);
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    z-index: 99;
+    cursor: pointer;
+    box-shadow: 0px 0px 3px 2px white;
+}
+.to_top:hover {
+    background-color: black;
+    transition: ease-in-out .4s;
+}
+/*---------------------------手機選單結束*/
+
+@media screen and (max-width: 768px) {
+.foot {
+    display: block;
+}
+.foot_logo img {
+    height: 100%;
+}
+.foot_logo {
+    min-height: 120px;
+    margin: 20px auto;
+}
+.foot_link_wrap {
+    display: block;
+}
+.foot_link {
+    margin: 10px 0;
+    border: none;
+}
+.content_wrap {
+    width: 90%;
+}
+.top_option {
+    justify-content: center;
+}
+.page {
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+}
+.bid_btn {
+    width: 100%;
+    padding: 20px 0;
+}
+.bid_btn img {
+    width: 20px;
+    height: 20px;
+}
+.item_cost_wrap img {
+    width: 20px;
+    height: 20px;
+}
+
+.menu {
+    width: 100%;
+}
+.menu {
+    display: none;
+}
+.header_menu_rwd {
+    display: block;
+}
+.menu_wrap {
+    height: 60px;
+}
+}

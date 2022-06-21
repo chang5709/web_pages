@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccountAdd</title>
+    <link rel="stylesheet" href="doc.css">
+</head>
+<body>
+
+<section>
+    <div class="head">
+        <div class="logo"><a href="#"><img src="https://picsum.photos/180/80?random=1">醫師專區</a></div>
+        <div class="log_name">
+            <div class="user_name">江明彥</div>醫師，您好<a href="#" class="log_out">登出</a>
+        </div>
+    </div>
+    <div class="menu_wrap">
+        <div class="menu">
+            <div class="menu_list"><a href="#">基本資料</a></div>
+            <div class="menu_list"><a href="#">密碼修改</a></div>
+            <div class="menu_list"><a href="#">預約查詢</a></div>
+            <div class="menu_list"><a href="#">矯正牙齒計算機</a></div>
+            <div class="menu_list"><a href="#">擴弓計算</a></div>
+            <div class="menu_list"><a href="#" id="active">子帳號管理</a></div>
+            <div class="menu_list"><a href="#">訂單管理(連結)</a></div>
+        </div>
+        <div class="header_menu_rwd">
+            <label for="menu_control" class="menu_btn_rwd">
+                <span></span>             
+            </label>
+            <nav>
+                <a href="#">基本資料</a>
+                <a href="#">密碼修改</a>
+                <a href="#">預約查詢</a>
+                <a href="#">矯正牙齒計算機</a>
+                <a href="#">擴弓計算</a>
+                <a href="#" id="active_rwd">子帳號管理</a>
+                <a href="#">訂單管理(連結)</a>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="wear_count_top_btn_wrap">
+        <a href="#" class="wear_count_top_btn" id="btn_active">子帳號管理</a>
+        <a href="#" class="wear_count_top_btn">診所管理</a>
+    </div>
+    <div class="account_add_content_wrap">
+        <div class="account_add_top_word"><h2>新增子帳號</h2></div>
+        <h3>姓名</h3>
+        <input type="text" class="account_add_text_box">
+        <h3>手機(帳號)</h3>
+        <input type="text" class="account_add_text_box">
+        <h3>密碼</h3>
+        <input type="text" class="account_add_text_box">
+        <label><h3>管理權限</h3></label>
+        <div class="account_add_checkbox_wrap">
+            <div class="account_add_checkbox"><label><input type="checkbox" style="margin-right: 10px;"><span class="check_mark"></span> 基本資料</label></div>
+            <div class="account_add_checkbox"><label><input type="checkbox" style="margin-right: 10px;"><span class="check_mark"></span>密碼修改</label></div>
+            <div class="account_add_checkbox"><label><input type="checkbox" style="margin-right: 10px;"><span class="check_mark"></span>預約查詢</label></div>
+            <div class="account_add_checkbox"><label><input type="checkbox" style="margin-right: 10px;"><span class="check_mark"></span>矯正牙套計算機</label></div>
+            <div class="account_add_checkbox"><label><input type="checkbox" style="margin-right: 10px;"><span class="check_mark"></span>擴弓計算</label></div>
+            <div class="account_add_checkbox"><label><input type="checkbox" style="margin-right: 10px;"><span class="check_mark"></span>子帳號管理</label></div>
+            <div class="account_add_checkbox"><label><input type="checkbox" style="margin-right: 10px;"><span class="check_mark"></span>訂單管理</label></div>
+        </div>
+
+        <div class="account_add_bottom_btn_wrap">
+            <a href="#" class="account_add_bottom_btn">新增</a>
+        </div>
+    </div>
+    
+</section>
+
+<section>
+    <div class="foot">
+        <div class="foot_left">
+            <a href="#">日本小明股份有限公司</a>
+            <p>台北市信義區信義路五段7號57F</p>
+            <p>電話:02-12345678</p>
+        </div>
+        <div class="copyright">日本小明股份有限公司,All rights reserved.</div>
+    </div>
+    <div class="to_top">TOP</div>
+</section>
+<script src="jquery-1.12.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".to_top").click(function(){
+                $("html,body").animate({scrollTop: 0}, 200);
+        });
+
+        $(".menu_btn_rwd").click(function(){
+                $(".header_menu_rwd nav").slideToggle("quick")
+        });
+    })
+</script>
+</body>
+</html>

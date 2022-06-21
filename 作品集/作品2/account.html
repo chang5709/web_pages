@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="doc.css">
+</head>
+<body>
+
+<section>
+    <div class="head">
+        <div class="logo"><a href="#"><img src="https://picsum.photos/180/80?random=1">醫師專區</a></div>
+        <div class="log_name">
+            <div class="user_name">江明彥</div>醫師，您好<a href="#" class="log_out">登出</a>
+        </div>
+    </div>
+    <div class="menu_wrap">
+        <div class="menu">
+            <div class="menu_list"><a href="#">基本資料</a></div>
+            <div class="menu_list"><a href="#">密碼修改</a></div>
+            <div class="menu_list"><a href="#">預約查詢</a></div>
+            <div class="menu_list"><a href="#">矯正牙齒計算機</a></div>
+            <div class="menu_list"><a href="#">擴弓計算</a></div>
+            <div class="menu_list"><a href="#" id="active">子帳號管理</a></div>
+            <div class="menu_list"><a href="#">訂單管理(連結)</a></div>
+        </div>
+        <div class="header_menu_rwd">
+            <label for="menu_control" class="menu_btn_rwd">
+                <span></span>             
+            </label>
+            <nav>
+                <a href="#">基本資料</a>
+                <a href="#">密碼修改</a>
+                <a href="#">預約查詢</a>
+                <a href="#">矯正牙齒計算機</a>
+                <a href="#">擴弓計算</a>
+                <a href="#" id="active_rwd">子帳號管理</a>
+                <a href="#">訂單管理(連結)</a>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="wear_count_top_btn_wrap">
+        <a href="#" class="wear_count_top_btn" id="btn_active">子帳號管理</a>
+        <a href="#" class="wear_count_top_btn">診所管理</a>
+    </div>
+
+    <div class="account_wrap">
+        <div class="account_list_top_wrap">
+            <div class="account_title_name">姓名</div>
+            <div class="account_title_phone">手機(帳號)</div>
+            <div class="account_title_manage">管理</div>
+        </div>
+        <div class="account_list_wrap">
+            <div class="account_list_name">林小美</div>
+            <div class="account_list_phone">0906693300</div>
+            <div class="account_list_manage">
+                <a href="#">管理</a>
+            </div>
+        </div>
+        <div class="account_list_wrap">
+            <div class="account_list_name2">林小美</div>
+            <div class="account_list_phone2">0906693300</div>
+            <div class="account_list_manage2">
+                <a href="#">管理</a>
+            </div>
+        </div>
+        <div class="account_list_wrap">
+            <div class="account_list_name">林小美</div>
+            <div class="account_list_phone">0906693300</div>
+            <div class="account_list_manage">
+                <a href="#">管理</a>
+            </div>
+        </div>
+        <div class="account_list_wrap">
+            <div class="account_list_name2">林小美</div>
+            <div class="account_list_phone2">0906693300</div>
+            <div class="account_list_manage2">
+                <a href="#">管理</a>
+            </div>
+        </div>
+    </div>
+    <div class="account_bottom_btn_wrap">
+        <div class="accout_bootom_btn"><a href="#">新增子帳號</a></div>
+    </div>
+</section>
+
+<section>
+    <div class="foot">
+        <div class="foot_left">
+            <a href="#">日本小明股份有限公司</a>
+            <p>台北市信義區信義路五段7號57F</p>
+            <p>電話:02-12345678</p>
+        </div>
+        <div class="copyright">日本小明股份有限公司,All rights reserved.</div>
+    </div>
+    <div class="to_top">TOP</div>
+</section>
+
+<script src="jquery-1.12.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".to_top").click(function(){
+                $("html,body").animate({scrollTop: 0}, 200);
+        });
+        
+        $(".menu_btn_rwd").click(function(){
+                $(".header_menu_rwd nav").slideToggle("quick")
+        });
+    })
+</script>
+</body>
+</html>
